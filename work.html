@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Position with Text</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <span style="font-size: 90px; color: rgb(4, 0, 255); margin-top: -5px"
+          >•</span
+        >
+        <span style="font-size: 14px; color: rgb(40, 40, 40)"
+          >One Blue Dot</span
+        >
+      </div>
+      <nav class="menu">
+        <a href="/shwetaarade/about.html">ABOUT</a>
+        <a href="/shwetaarade/work.html">WORK</a>
+        <a href="/shwetaarade/contact.html">CONTACT</a>
+      </nav>
+    </header>
+    <div class="dot-container">
+      <div class="dot-wrapper" data-dot="dot1">
+        <div class="circle_dot">●</div>
+        <span class="dot-text">Architecture</span>
+      </div>
+      <div class="dot-wrapper" data-dot="dot2">
+        <div class="circle_dot">●</div>
+        <span class="dot-text">Interior</span>
+      </div>
+      <div class="dot-wrapper" data-dot="dot3">
+        <div class="circle_dot">●</div>
+        <span class="dot-text">Landscape</span>
+      </div>
+      <div class="dot-wrapper" data-dot="dot4">
+        <div class="circle_dot">●</div>
+        <span class="dot-text">Research</span>
+      </div>
+    </div>
+
+    <div class="scrollable-container">
+      <div class="table-container" style="display: none">
+        <table id="dynamicTable">
+        </table>
+      </div>
+    </div>
+  </body>
+  <script>
+    const dotData = {
+      dot1: [
+        { col1: "WEEKEND HOME", col2: "HYD, INDIA", col3: "2024" },
+        { col1: "BEACH HOUSE", col2: "DAPOLI, INDIA", col3: "2024" },
+        { col1: "KAALI TEMPLE", col2: "TEXAS, USA", col3: "2024" },
+        { col1: "ABHIJEET", col2: "AHMEDNAGAR, INDIA", col3: "2023" },
+      ],
+      dot2: [
+        { col1: "URBAN MUSEUM", col2: "PUNE, INDIA", col3: "2020" },
+        { col1: "JOYVILLE", col2: "PUNE, INDIA", col3: "2023" },
+        { col1: "OFD VILLA", col2: "HYD, INDIA", col3: "2023" },
+      ],
+      dot3: [
+        // Data for Dot 3
+      ],
+      dot4: [
+        // Data for Dot 4
+      ],
+    };
+
+    document.querySelectorAll(".dot-wrapper").forEach(function (dot) {
+      dot.addEventListener("mouseover", function () {
+        // Remove active class and hide text for all dots
+        document.querySelectorAll(".dot-wrapper").forEach(function (otherDot) {
+          otherDot.querySelector(".circle_dot").style.color = "black"; // Reset color
+          otherDot.querySelector(".dot-text").style.opacity = "0"; // hide text
+          otherDot.querySelector(".dot-text").style.visibility = "hidden";
+        });
+
+        // Set this dot as active
+        this.querySelector(".circle_dot").style.color = "rgb(4, 0, 255)"; // Change color to blue
+        this.querySelector(".dot-text").style.opacity = "1"; // Show text
+        this.querySelector(".dot-text").style.visibility = "visible";
+
+        // Get the dot data identifier and update the table
+        const dotId = this.getAttribute("data-dot");
+        const tableData = dotData[dotId];
+        const table = document.getElementById("dynamicTable");
+        table.innerHTML = ""; // Clear existing content
+
+        // Build the table rows based on the data
+        tableData.forEach((data) => {
+          const row = table.insertRow();
+          const cell1 = row.insertCell();
+          cell1.textContent = data.col1;
+          cell1.className = "left-align";
+          const cell2 = row.insertCell();
+          cell2.textContent = data.col2;
+          cell2.className = "center-align";
+          const cell3 = row.insertCell();
+          cell3.textContent = data.col3;
+          cell3.className = "right-align";
+        });
+
+        document.querySelector(".table-container").style.display = "block"; // Display the table
+      });
+    });
+  </script>
+</html>

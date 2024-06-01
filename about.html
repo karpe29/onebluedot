@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One Blue Dot</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow-x: hidden;
+        font-family: Arial, sans-serif; /* Ensures font consistency */
+        scroll-snap-type: y mandatory; /* Enables scroll snapping along the y-axis */
+        overflow-y: scroll; /* Allows vertical scrolling */
+        scrollbar-width: none; /* Hides the scrollbar in Firefox */
+      }
+      body::-webkit-scrollbar {
+        display: none; /* Hides the scrollbar in WebKit browsers */
+      }  
+      .circle_dot {
+        font-size: 30em; /* Size of the circle dot */
+        text-align: center;
+        margin-bottom: 20px; /* Space between dot and text */
+        color: #0400ff;
+        line-height: 0.8;
+      }
+      #text_aboutme {
+        width: 40%; /* Width of the text block */
+        text-align: justify;
+        color: rgb(40, 40, 40);
+      }
+
+      #themecolor {
+        color: #0000ff; /* Theme color, adjust as needed */
+      }
+
+      .scroll-down {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.2em;
+        cursor: pointer;
+        opacity: 0; /* Start with the icon hidden */
+        animation: fadeInOut 2s ease-in-out 3s infinite; /* Fade in and out */
+      }
+
+    @keyframes fadeInOut {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
+    }
+      @media (max-width: 768px) {
+        /* Adjustments for tablets and smaller devices */
+        header {
+          flex-direction: column;
+          padding: 5px 10px;
+        }
+        .menu {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+        .circle_dot {
+          font-size: 30px; /* Smaller dot for smaller screens */
+        }
+        #text_aboutme {
+          width: 95%; /* More width for better readability */
+          font-size: smaller; /* Smaller font for smaller devices */
+        }
+        .scroll-down {
+          font-size: 20px; /* Smaller icon for smaller screens */
+        }
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+       
+        <span style="font-size: 14px; color: rgb(40, 40, 40)"
+          >One Blue Dot</span
+        >
+        <!-- <img src="path_to_logo.png" alt="One Blue Dot Logo" style="height: 50px;"> Adjust the logo path and size as needed -->
+      </div>
+      <nav class="menu">
+        <a href="/shwetaarade/about.html">ABOUT</a>
+        <a href="/shwetaarade/work.html">WORK</a>
+        <a href="/shwetaarade/contact.html">CONTACT</a>
+      </nav>
+    </header>
+    <div id="container1">
+      <div class="about_page_one">
+        <div class="circle_dot">&#9679;</div>
+        <p id="text_aboutme">
+          We are a bespoke design studio that meets inspiration from around the
+          world, rooted in the cultural melting pot of Hyderabad, India. From
+          bespoke residential projects to dynamic large scale projects and
+          precincts, our studio creates a dialogue for all. Our approach lies in
+          creating symphonies of experiences and language of emotions through
+          our designs. We abide by the passion for our craft and details.<br/><br/>
+          <span style="font-style: italic"
+            >We are a tiny dot to the future of architecture!</span
+          >
+        </p>
+        <div class="scroll-down">
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+      <div class="about_page_two">
+        <!-- Content for Page Two -->
+        <p id="text_aboutme" style="color: rgb(40, 40, 40)">
+          At <span id="themecolor">One Blue Dot</span>, our philosophy is guided
+          by three essential beliefs.
+        </p>
+        <p id="text_aboutme" style="color: rgb(40, 40, 40)">
+          <span id="bold">Make it Simple & Sensitive</span>
+          Our practice focuses on creating designs that are elegant, functional,
+          and responsive to their context. We strive to distill complex ideas
+          into clear and uncomplicated forms, while being sensitive to the needs
+          and experiences of users, communities, and the environment. This
+          approach ensures that designs are intuitive, accessible, and
+          respectful of cultural and social contexts.
+        </p>
+        <p id="text_aboutme" style="color: rgb(40, 40, 40)">
+          <span id="bold">Make it Natural:</span>
+          Drawing inspiration from the delicate balance of our blue planet, we
+          approach each project with a deep sense of responsibility and
+          stewardship. Natural elements like air,light and greenscape fosters
+          tranquil living and allows a safe space to cultivate a positive
+          attitude. Embracing this symbiotic relationship between the built
+          environment and nature is always on the top of our priority.
+        </p>
+        <p id="text_aboutme" style="color: rgb(40, 40, 40)">
+          <span id="bold">Make it Diverse:</span>
+          Our design practice is driven by a passion for collaboration and
+          exploration of diverse cultures, traditions, and architectural styles.
+          We derive inspiration by integrating elements from around the world to
+          create unique ones that are both timeless and forward-thinking.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
