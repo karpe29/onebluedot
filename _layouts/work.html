@@ -1,0 +1,136 @@
+---
+layout: work-layout
+---
+<div class="carousel-container">
+  <div class="carousel">
+    {% for project in site.projects %}
+    {% if project.cover_image %}
+      <div class="carousel-item" style="background-image: url('{{project.url}}{{ project.cover_image }}');">
+        <!-- <div class="carousel-caption">
+          <h3>{{ project.title }}</h3>
+        </div> -->
+      </div>
+    {% endif %}
+  {% endfor %}
+  </div>
+  <a class="carousel-control left" href="#" role="button" data-slide="prev">
+    <span class="icon-prev" aria-hidden="true">&lt;</span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control right" href="#" role="button" data-slide="next">
+    <span class="icon-next" aria-hidden="true">&gt;</span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="container mx-auto px-4 py-8">
+  <div class="dot-container flex justify-between py-5 mt-16 mb-7">
+    {% for category in page.categories %}
+      <div class="dot-wrapper flex-1 flex justify-center items-center h-15 relative" data-category="{{ category | slugify }}">
+        <div class="circle_dot ">●</div>
+        <span class="dot-text absolute bottom-[-20px] w-full text-center opacity-0 invisible text-lg font-normal transition-opacity duration-300">{{ category }}</span>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="scrollable-container">
+    <table class="w-full border-collapse">
+      <tbody id="projectsTable">
+        <!-- Project rows will be inserted here by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOM fully loaded');
+
+  const projects = [
+    {% for project in site.projects %}
+      {
+        "title": {{ project.title | jsonify }},
+        "url": {{ project.url | jsonify }},
+        "category": {{ project.category | jsonify }},
+        "location": {{ project.location | jsonify }},
+        "year": {{ project.year | jsonify }}
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+
+    console.log('Projects:', projects);
+
+  const dotWrappers = document.querySelectorAll('.dot-wrapper');
+  console.log('Dot wrappers found:', dotWrappers.length);
+
+  const projectsTable = document.getElementById('projectsTable');
+  if (!projectsTable) {
+    console.error('Projects table not found');
+    return;
+  }
+
+  function showProjects(category) {
+    console.log('Showing projects for category:', category);
+    const filteredProjects = projects.filter(project => 
+  project.category.toLowerCase() === category.toLowerCase()
+);
+    console.log('Filtered projects:', filteredProjects);
+
+    projectsTable.innerHTML = filteredProjects.map(project => `
+      
+        <tr class="project-row"  style="cursor: pointer; transition: background-color 0.3s ease;" 
+          onmouseover="this.style.backgroundColor='rgba(0, 0, 0, 0.05)'" 
+          onmouseout="this.style.backgroundColor=''" " onclick="window.location='${project.url}'">
+        
+        <td class="left-align">
+          ${project.title}
+        </td>
+        <td class="center-align">${project.location}</td>
+        <td class="right-align">${project.year}</td>
+        </tr>
+    `).join('');
+    projectsTable.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+  }
+
+  dotWrappers.forEach(wrapper => {
+    wrapper.addEventListener('mouseenter', (event) => {
+      console.log('Mouse entered:', wrapper.dataset.category);
+      
+      dotWrappers.forEach(w => {
+        const dot = w.querySelector('.circle_dot');
+        if (dot) {
+          dot.classList.remove('text-blue-600');
+          dot.style.color = "black"; // Reset color
+          // otherDot.querySelector(".dot-text").style.opacity = "0"; // hide text
+          // otherDot.querySelector(".dot-text").style.visibility = "hidden";
+        } else {
+          console.warn('No .circle_dot found in wrapper');
+        }
+      });
+
+      const currentDot = wrapper.querySelector('.circle_dot');
+      if (currentDot) {
+        currentDot.classList.add('text-blue-600');
+        currentDot.style.color = "rgb(4, 0, 255)"; // Change color to blue
+
+      } else {
+        console.warn('No .circle_dot found in current wrapper');
+      }
+
+      showProjects(wrapper.dataset.category);
+      
+    });
+  });
+
+  // Show projects for the first category by default
+  // if (dotWrappers.length > 0) {
+  //   console.log('Triggering default category');
+  //   dotWrappers[0].dispatchEvent(new Event('mouseenter'));
+  // } else {
+  //   console.warn('No dot wrappers found');
+  // }
+});
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  </head>
+
+  <body>
+    {% include header-withoutlogo.html %}
+    {{ content }}
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('.carousel');
+  const items = carousel.querySelectorAll('.carousel-item');
+  const totalItems = items.length;
+  let currentIndex = 0;
+
+  function showItem(index) {
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  document.querySelector('.carousel-control.left').addEventListener('click', function(e) {
+    e.preventDefault();
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    showItem(currentIndex);
+  });
+
+  document.querySelector('.carousel-control.right').addEventListener('click', function(e) {
+    e.preventDefault();
+    currentIndex = (currentIndex + 1) % totalItems;
+    showItem(currentIndex);
+  });
+});
+</script>
+
+</html>

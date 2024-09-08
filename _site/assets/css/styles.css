@@ -1,0 +1,537 @@
+/* Graphik Black */
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikBlack.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikBlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Graphik Bold */
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikBoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Graphik Extra Light */
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikExtralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikExtralightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+/* Graphik Light */
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikLightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Graphik Medium */
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikMediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Graphik Regular */
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikRegular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikRegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Graphik SemiBold */
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikSemibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikSemiboldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Graphik Super */
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikSuper.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikSuperItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* Graphik Thin */
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikThin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/GraphikThinItalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+
+
+
+html,
+body {
+    font-family: 'Graphik', sans-serif;
+    font-weight: 400;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; 
+    /* overflow: hidden; */
+    /* Prevents scroll bar */
+}
+
+
+.carousel-container {
+    position: relative;
+    width: 70%;
+    max-width: 70%;
+    /* padding-bottom: 49%; */
+    margin: 20px auto;
+    overflow: hidden;
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-item {
+    flex: 0 0 100%;
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+  }
+  
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0);
+    color: rgb(15, 11, 247);
+    text-decoration: none;
+    padding: 10px 15px;
+    z-index: 1;
+  }
+  
+  .carousel-control.left {
+    left: 10px;
+  }
+  
+  .carousel-control.right {
+    right: 10px;
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+
+
+.fullscreen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(4, 0, 255);
+    /* Full-screen starts with a blue background */
+    cursor: pointer;
+    /* Indicates the element is clickable */
+    position: fixed;
+    /* Ensures the div remains properly placed */
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    border-radius: 0%;
+    /* Starts as a rectangle */
+
+    transform: translate(-50%, -50%);
+    /* Adjust positioning for centering */
+}
+
+
+
+#container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Ensures centered content */
+    cursor: pointer;
+}
+
+#container1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.circle {
+    background-color: blue;
+    transition: all 0.5s ease;
+    border-radius: 50%;
+    width: 150vmax;
+    height: 150vmax;
+    cursor: url('/assets/images/white-click-cursor.png'), auto;
+}
+
+.viewMenu {
+    top: 0 !important;
+    ;
+}
+
+#text {
+    font-size: 16px;
+    color: white;
+    display: none;
+    /* Initially hidden */
+    position: absolute;
+    /* Allows for specific placement */
+    white-space: nowrap;
+    opacity: 0;
+    /* Start fully transparent */
+}
+
+#text {
+    display: none;
+    /* Initially hide text */
+    font-size: 20px;
+    font-weight: 100;
+    color: #0400ff;
+    margin-left: 1px;
+    /* Space between the circle and the text */
+    display: none;
+    /* Initially hidden */
+    position: absolute;
+    white-space: nowrap;
+    opacity: 0;
+    /* Start fully transparent */
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    /* Padding around the header content */
+    background-color: #fff;
+    /* White background */
+    /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); Subtle shadow for depth */
+    position: sticky;
+    top: 0;
+    /* Stick to the top */
+    z-index: 1000;
+    /* Ensures the header stays above other content */
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 35px;
+
+
+}
+
+.menu {
+
+    font-size: 1em;
+    font-weight: 400;
+    background: white;
+    color: rgb(40, 40, 40);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    transition: top 0.5s ease-in-out
+}
+
+nav>a {
+    color: rgb(40, 40, 40);
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+.dot-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    margin-top: 2%;
+    margin-bottom: 7%;
+}
+
+.dot-wrapper {
+    flex: 1;
+    /* Ensures equal division of space */
+    display: flex;
+    justify-content: center;
+    /* Centers the dot horizontally */
+    position: relative;
+    /* Context for positioning text */
+    align-items: center;
+    /* Centers the dot vertically */
+    height: 60px;
+    /* Adjust height as needed */
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    /* Makes the dot circular */
+    transition: background-color 0.3s ease;
+}
+
+.dot-text {
+    position: absolute;
+    bottom: -20px;
+    /* Adjust distance below the dot */
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    visibility: hidden;
+    font-size: 1.4em;
+    font-weight: 400;
+    color: rgb(40, 40, 40);
+}
+
+.dot-wrapper:hover .dot {
+    background-color: rgb(4, 0, 255);
+    /* Color changes on hover */
+}
+
+.dot-wrapper:hover .dot-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+.scrollable-container {
+    width: 90%;
+    max-height: 900px;
+    margin: 50px auto;
+    /* Centers the div and adds vertical spacing */
+    overflow-x: hidden;
+    /* Enables horizontal scrolling */
+    overflow-y: auto;  
+    scrollbar-width: thin;  
+    -ms-overflow-style: auto; 
+}
+
+.scrollable-container::-webkit-scrollbar {
+    width: 8px;  
+}
+
+.scrollable-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+    background: #888;  
+}
+
+.scrollable-container::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Ensures borders don't double up */
+    table-layout: fixed;
+    /* Helps in maintaining equal column widths */
+}
+
+td {
+    padding-top: 1.3em;
+    padding-bottom: 1.3em;
+    border-top: 1px solid rgb(40, 40, 40, 0.5);
+    border-bottom: 1px solid rgb(40, 40, 40, 0.5);
+    text-align: left;
+    /* Default text alignment */
+    width: 33.333%;
+    /* Divides the table into three equal parts */
+    font-size: 1.0em;
+    font-weight: 400;
+    color: rgb(40, 40, 40);
+}
+
+td.center-align {
+    text-align: center;
+}
+
+td.right-align {
+    text-align: right;
+}
+
+
+
+/* about*/
+
+.circle_dot {
+    font-size: 50px;
+    /* Controls the size of the circle */
+    color: rgb(0, 0, 0);
+    /* Sets the color of the circle */
+    margin: 0 auto;
+    /* margin-top: 50%; */
+    line-height: 0.7;
+}
+
+#text_aboutme {
+    margin-top: 20px;
+    color: rgb(4, 0, 255);
+    width: 66%;
+    margin: 0.6em;
+    line-height: 1.2;
+    font-weight: 300;
+    text-align: justify;
+
+}
+
+#themecolor {
+    color: rgb(4, 0, 255);
+}
+
+#bold {
+    font-weight: 400;
+    font-style: italic;
+    /* makes text bold */
+    display: block;
+    /* makes the span element start on a new line */
+    margin-top: 10px;
+    /* adds space above the span */
+    margin-bottom: 10px;
+    /* adds space below the span */
+}
+
+#aboutme_text_div {
+    display: contents;
+
+}
+
+.about_page_one, .about_page_two {
+        height: 100vh; /* Ensures each section fills the entire viewport */
+        display: flex;
+        align-items: center; /* Centers content vertically */
+        justify-content: center; /* Centers content horizontally */
+        flex-direction: column;
+        scroll-snap-align: start; /* Snaps the start of the sections to the snapport's start */
+        overflow: hidden;
+        position: relative;
+      }
+
+@media (max-width: 768px) {
+    /* Adjustments for tablets and smaller devices */
+    header {
+      flex-direction: column;
+      padding: 5px 10px;
+    }
+    .menu {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .circle_dot {
+      font-size: 30px; /* Smaller dot for smaller screens */
+    }
+    #text_aboutme {
+      width: 95%; /* More width for better readability */
+      font-size: smaller; /* Smaller font for smaller devices */
+    }
+    .scroll-down {
+      font-size: 20px; /* Smaller icon for smaller screens */
+    }
+  }

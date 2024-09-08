@@ -1,0 +1,34 @@
+---
+layout: project-layout
+---
+
+
+<main>
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.tagline }}</p>
+    <div class="project-details">
+        <p>Category: {{ page.category }} |{{ page.status }} | {{ page.location }}</p>
+        <p>Year: {{ page.year }}</p>
+    </div>
+    
+    <p>This weekend home is a harmonious retreat that celebrates the ethereal beauty of komorebi—the Japanese term for the interplay of sunlight filtering through trees—and the grounding essence of soil. Nestled in a serene, natural setting, the design integrates natural elements and a deep connection to the land, creating a tranquil haven for relaxation and reflection.</p>
+    
+    
+    {% assign project_name = page.path | split: "/" | last | split: "." | first %}
+    {% assign matching_images = "" | split: "" %}
+    
+    {% for file in site.static_files %}
+      {% if file.path contains project_name %}
+        {% assign matching_images = matching_images | push: file %}
+      {% endif %}
+    {% endfor %}
+    
+    {% assign sorted_images = matching_images | sort: "name" %}
+    
+    {% for image in sorted_images %}
+      <div class="image-placeholder">
+        <img src="{{ image.name }}" alt="{{ page.title }} image">
+      </div>
+    {% endfor %}
+</main>
+

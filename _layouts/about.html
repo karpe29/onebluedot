@@ -1,0 +1,65 @@
+---
+layout: about-layout
+---
+
+<div id="container1" class="flex flex-col min-h-screen">
+    <div class="about_page_one flex-1 flex flex-col items-center justify-center px-4 md:px-0">
+        <div class="circle_dot text-5xl text-black mb-8">●</div>
+        <div id="text_aboutme" class="w-full md:w-2/3 text-blue-600 text-justify leading-relaxed">
+            {{ page.intro_text }}
+            <p class="mt-4 italic">{{ page.motto }}</p>
+        </div>
+        <div class="scroll-down">
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+    </div>
+
+    <div class="about_page_two flex-1 flex flex-col items-center justify-center px-4 md:px-0">
+        <div id="text_aboutme" class="w-full md:w-2/3 text-justify leading-relaxed">
+            <p>At <span id="themecolor" class="text-blue-600">One Blue Dot</span>, our philosophy is guided by three essential beliefs.</p>
+            
+            {% for belief in page.beliefs %}
+            <p class="mt-4">
+                <span id="bold" class="font-semibold italic block">{{ belief.title }}</span>
+                {{ belief.description }}
+            </p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- 
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const pages = document.querySelectorAll('.about_page_one, .about_page_two');
+        let currentPageIndex = 0;
+
+        function showPage(index) {
+            pages.forEach((page, i) => {
+                if (i === index) {
+                    page.style.display = 'flex';
+                } else {
+                    page.style.display = 'none';
+                }
+            });
+        }
+
+        function nextPage() {
+            currentPageIndex = (currentPageIndex + 1) % pages.length;
+            showPage(currentPageIndex);
+        }
+
+        showPage(0);  // Show the first page initially
+
+        document.addEventListener('wheel', (event) => {
+            if (event.deltaY > 0) {
+                nextPage();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+                nextPage();
+            }
+        });
+    });
+</script> -->

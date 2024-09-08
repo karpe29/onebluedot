@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<div id="container" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center cursor-pointer">
+    <div id="shrinkable" class="circle"></div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const container = document.getElementById("container");
+      const shrinkable = document.getElementById("shrinkable");
+      const textElement = document.getElementById("text");
+      const menu = document.getElementById("menu");
+
+      container.addEventListener("click", function () {
+        // Shrink the circle
+        gsap.to(shrinkable, {
+          duration: 0.5,
+          width: '30em',
+          height: '30em',
+          ease: "power2.in",
+          onComplete: function () {
+            // Once the circle has shrunk, handle the text and menu animations
+            // textElement.style.display = 'block'; // Make the text visible for animation
+            gsap.fromTo(
+              textElement,
+              {
+                opacity: 0,
+                x: 0, // Starts at the center
+              },
+              {
+                duration: 1,
+                x: 62, // Moves text to the right
+                opacity: 1, // Fade in the text as it moves
+                ease: "power3.out",
+              }
+            );
+            // Slide down the menu
+            // menu.style.display = 'flex';
+            gsap.to(menu, {
+              top: 0, // Bring the menu to view
+              duration: 0.5,
+              ease: "power2.out",
+            });
+          },
+        });
+      });
+    });
+  </script>

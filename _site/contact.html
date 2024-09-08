@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>contact | One Blue Dot</title>
+<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="icon" type="image/x-icon" href="/favicon.png">
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+/>
+
+<style>
+    body,
+    html {
+    /* margin: 0; */
+    /* padding: 0; */
+    /* height: 100%; */
+    overflow-x: hidden;
+    /* font-family: Arial, sans-serif; Ensures font consistency */
+    scroll-snap-type: y mandatory; /* Enables scroll snapping along the y-axis */
+    overflow-y: scroll; /* Allows vertical scrolling */
+    scrollbar-width: none; /* Hides the scrollbar in Firefox */
+    }
+    body::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar in WebKit browsers */
+    }  
+    
+    .circle_dot {
+    font-size: 30em; /* Size of the circle dot */
+    text-align: center;
+    margin-bottom: 20px; /* Space between dot and text */
+    color: #0400ff;
+    line-height: 0.8;
+    }
+    #text_aboutme {
+    width: 40%; /* Width of the text block */
+    text-align: justify;
+    color: rgb(40, 40, 40);
+    }
+
+    #themecolor {
+    color: #0000ff; /* Theme color, adjust as needed */
+    }
+
+    .scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2em;
+    cursor: pointer;
+    opacity: 0; /* Start with the icon hidden */
+    animation: fadeInOut 2s ease-in-out 3s infinite; /* Fade in and out */
+    }
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+    @media (max-width: 768px) {
+    /* Adjustments for tablets and smaller devices */
+    header {
+        flex-direction: column;
+        padding: 5px 10px;
+    }
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .circle_dot {
+        font-size: 30px; /* Smaller dot for smaller screens */
+    }
+    #text_aboutme {
+        width: 95%; /* More width for better readability */
+        font-size: smaller; /* Smaller font for smaller devices */
+    }
+    .scroll-down {
+        font-size: 20px; /* Smaller icon for smaller screens */
+    }
+}
+</style>
+</head>
+<body>
+    <header>
+    <div class="logo">
+     
+      <span style="font-size: 14px; color: rgb(40, 40, 40)"
+        >One Blue Dot</span
+      >
+      <!-- <img src="path_to_logo.png" alt="One Blue Dot Logo" style="height: 50px;"> Adjust the logo path and size as needed -->
+    </div>
+    <nav class="menu">
+      <a href="/about.html">ABOUT</a>
+      <a href="/work.html">WORK</a>
+      <a href="/contact.html">CONTACT</a>
+    </nav>
+  </header>
+    <div id="container1">
+  <div class="about_page_one">
+    <p id="text_aboutme" style="width: auto;">
+        onebluedot01@gmail.com<br/>
+        +919730241992<br/>
+        61b, pearl village,<br/>Kondapur, Hyderabad 500084
+       
+       
+    </p>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Work | One Blue Dot</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+    <div class="logo">
+     
+      <span style="font-size: 14px; color: rgb(40, 40, 40)"
+        >One Blue Dot</span
+      >
+      <!-- <img src="path_to_logo.png" alt="One Blue Dot Logo" style="height: 50px;"> Adjust the logo path and size as needed -->
+    </div>
+    <nav class="menu">
+      <a href="/about.html">ABOUT</a>
+      <a href="/work.html">WORK</a>
+      <a href="/contact.html">CONTACT</a>
+    </nav>
+  </header>
+    <div class="carousel-container">
+  <div class="carousel">
+    
+    
+  
+    
+      <div class="carousel-item" style="background-image: url('/projects/beach-house/cover.jpg');">
+        <!-- <div class="carousel-caption">
+          <h3>Beach house</h3>
+        </div> -->
+      </div>
+    
+  
+    
+      <div class="carousel-item" style="background-image: url('/projects/joyville/Joyville 1.jpg');">
+        <!-- <div class="carousel-caption">
+          <h3>Joyville</h3>
+        </div> -->
+      </div>
+    
+  
+    
+      <div class="carousel-item" style="background-image: url('/projects/kaali-temple/2.jpg');">
+        <!-- <div class="carousel-caption">
+          <h3>Kaali Temple</h3>
+        </div> -->
+      </div>
+    
+  
+    
+      <div class="carousel-item" style="background-image: url('/projects/komorebi-house/1.jpg');">
+        <!-- <div class="carousel-caption">
+          <h3>Komorebi House</h3>
+        </div> -->
+      </div>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  </div>
+  <a class="carousel-control left" href="#" role="button" data-slide="prev">
+    <span class="icon-prev" aria-hidden="true">&lt;</span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control right" href="#" role="button" data-slide="next">
+    <span class="icon-next" aria-hidden="true">&gt;</span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="container mx-auto px-4 py-8">
+  <div class="dot-container flex justify-between py-5 mt-16 mb-7">
+    
+      <div class="dot-wrapper flex-1 flex justify-center items-center h-15 relative" data-category="architecture">
+        <div class="circle_dot ">●</div>
+        <span class="dot-text absolute bottom-[-20px] w-full text-center opacity-0 invisible text-lg font-normal transition-opacity duration-300">Architecture</span>
+      </div>
+    
+      <div class="dot-wrapper flex-1 flex justify-center items-center h-15 relative" data-category="interior">
+        <div class="circle_dot ">●</div>
+        <span class="dot-text absolute bottom-[-20px] w-full text-center opacity-0 invisible text-lg font-normal transition-opacity duration-300">Interior</span>
+      </div>
+    
+      <div class="dot-wrapper flex-1 flex justify-center items-center h-15 relative" data-category="landscape">
+        <div class="circle_dot ">●</div>
+        <span class="dot-text absolute bottom-[-20px] w-full text-center opacity-0 invisible text-lg font-normal transition-opacity duration-300">Landscape</span>
+      </div>
+    
+      <div class="dot-wrapper flex-1 flex justify-center items-center h-15 relative" data-category="research">
+        <div class="circle_dot ">●</div>
+        <span class="dot-text absolute bottom-[-20px] w-full text-center opacity-0 invisible text-lg font-normal transition-opacity duration-300">Research</span>
+      </div>
+    
+  </div>
+
+  <div class="scrollable-container">
+    <table class="w-full border-collapse">
+      <tbody id="projectsTable">
+        <!-- Project rows will be inserted here by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOM fully loaded');
+
+  const projects = [
+    
+      {
+        "title": "Abhijeet",
+        "url": "/projects/abhijeet/",
+        "category": "Architecture",
+        "location": "Ahmednagar,India",
+        "year": 2023
+      },
+    
+      {
+        "title": "Beach house",
+        "url": "/projects/beach-house/",
+        "category": "Architecture",
+        "location": "Dapoli, India",
+        "year": 2024
+      },
+    
+      {
+        "title": "Joyville",
+        "url": "/projects/joyville/",
+        "category": "Interior",
+        "location": "Pune, India",
+        "year": 2023
+      },
+    
+      {
+        "title": "Kaali Temple",
+        "url": "/projects/kaali-temple/",
+        "category": "Architecture",
+        "location": "Texas, USA",
+        "year": 2024
+      },
+    
+      {
+        "title": "Komorebi House",
+        "url": "/projects/komorebi-house/",
+        "category": "Architecture",
+        "location": "Hyderabad, India",
+        "year": 2024
+      },
+    
+      {
+        "title": "OBD Studio",
+        "url": "/projects/obd-studio/",
+        "category": "Interior",
+        "location": "Hyderabad, India",
+        "year": 2023
+      },
+    
+      {
+        "title": "Pottery Studio",
+        "url": "/projects/pottery-studio/",
+        "category": "Architecture",
+        "location": "otty, India",
+        "year": 2024
+      },
+    
+      {
+        "title": "Urban Museum",
+        "url": "/projects/urban-museum/",
+        "category": "Interior",
+        "location": "Pune, India",
+        "year": 2021
+      },
+    
+      {
+        "title": "Weekend home",
+        "url": "/projects/weekend-home/",
+        "category": "Architecture",
+        "location": "Velhe, India",
+        "year": 2024
+      },
+    
+      {
+        "title": "Yellow House",
+        "url": "/projects/yellow-house/",
+        "category": "Interior",
+        "location": "Pune,India",
+        "year": 2024
+      }
+    
+  ];
+
+    console.log('Projects:', projects);
+
+  const dotWrappers = document.querySelectorAll('.dot-wrapper');
+  console.log('Dot wrappers found:', dotWrappers.length);
+
+  const projectsTable = document.getElementById('projectsTable');
+  if (!projectsTable) {
+    console.error('Projects table not found');
+    return;
+  }
+
+  function showProjects(category) {
+    console.log('Showing projects for category:', category);
+    const filteredProjects = projects.filter(project => 
+  project.category.toLowerCase() === category.toLowerCase()
+);
+    console.log('Filtered projects:', filteredProjects);
+
+    projectsTable.innerHTML = filteredProjects.map(project => `
+      
+        <tr class="project-row"  style="cursor: pointer; transition: background-color 0.3s ease;" 
+          onmouseover="this.style.backgroundColor='rgba(0, 0, 0, 0.05)'" 
+          onmouseout="this.style.backgroundColor=''" " onclick="window.location='${project.url}'">
+        
+        <td class="left-align">
+          ${project.title}
+        </td>
+        <td class="center-align">${project.location}</td>
+        <td class="right-align">${project.year}</td>
+        </tr>
+    `).join('');
+    projectsTable.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+  }
+
+  dotWrappers.forEach(wrapper => {
+    wrapper.addEventListener('mouseenter', (event) => {
+      console.log('Mouse entered:', wrapper.dataset.category);
+      
+      dotWrappers.forEach(w => {
+        const dot = w.querySelector('.circle_dot');
+        if (dot) {
+          dot.classList.remove('text-blue-600');
+          dot.style.color = "black"; // Reset color
+          // otherDot.querySelector(".dot-text").style.opacity = "0"; // hide text
+          // otherDot.querySelector(".dot-text").style.visibility = "hidden";
+        } else {
+          console.warn('No .circle_dot found in wrapper');
+        }
+      });
+
+      const currentDot = wrapper.querySelector('.circle_dot');
+      if (currentDot) {
+        currentDot.classList.add('text-blue-600');
+        currentDot.style.color = "rgb(4, 0, 255)"; // Change color to blue
+
+      } else {
+        console.warn('No .circle_dot found in current wrapper');
+      }
+
+      showProjects(wrapper.dataset.category);
+      
+    });
+  });
+
+  // Show projects for the first category by default
+  // if (dotWrappers.length > 0) {
+  //   console.log('Triggering default category');
+  //   dotWrappers[0].dispatchEvent(new Event('mouseenter'));
+  // } else {
+  //   console.warn('No dot wrappers found');
+  // }
+});
+</script>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('.carousel');
+  const items = carousel.querySelectorAll('.carousel-item');
+  const totalItems = items.length;
+  let currentIndex = 0;
+
+  function showItem(index) {
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  document.querySelector('.carousel-control.left').addEventListener('click', function(e) {
+    e.preventDefault();
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    showItem(currentIndex);
+  });
+
+  document.querySelector('.carousel-control.right').addEventListener('click', function(e) {
+    e.preventDefault();
+    currentIndex = (currentIndex + 1) % totalItems;
+    showItem(currentIndex);
+  });
+});
+</script>
+
+</html>

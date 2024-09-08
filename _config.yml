@@ -1,0 +1,33 @@
+title: One Blue Dot
+email: onebluedot01@gmail.com
+description: >-
+  One Blue Dot is a bespoke design studio rooted in the cultural melting pot of Hyderabad, India.
+baseurl: ""
+url: ""
+
+# Build settings
+# Remove the theme line if it exists
+# theme: minima
+# plugins:
+#   - jekyll-feed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - package.json
+  - package-lock.json
+  - README.md
+  - tailwind.config.js
+  - postcss.config.js
+
+# Custom collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
