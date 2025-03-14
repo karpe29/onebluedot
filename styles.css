@@ -49,9 +49,15 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-y: auto; 
-    /* overflow: hidden; */
-    /* Prevents scroll bar */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+}
+
+.scrollable{
+    overflow-y: auto;  
+    scrollbar-width:none;  
+    -ms-overflow-style: auto; 
 }
 
 
@@ -84,15 +90,15 @@ body {
 
 
 #container {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Ensures centered content */
     cursor: pointer;
+    z-index: 10;
 }
 
 #container1 {
@@ -148,28 +154,61 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    /* Padding around the header content */
     background-color: #fff;
-    /* White background */
-    /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); Subtle shadow for depth */
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
-    /* Stick to the top */
+    left: 0;
     z-index: 1000;
-    /* Ensures the header stays above other content */
+    /* height: 38px; */
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
 
+/* Class for hiding the header */
+header.hidden {
+    transform: translateY(-100%);
 }
 
 .logo {
     display: flex;
     align-items: center;
     height: 35px;
+    
+}
+.obd-logo-bg {
+    position: absolute;
+    width: 30em;
+    height: 30em;
+    background-image: url('logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+}
 
+@media (max-width: 768px) {
+    .obd-logo-bg {
+        width: 25em;
+        height: 25em;
+    }
+}
 
+#section-heading {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 3.125em;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    #section-heading {
+        font-size: 1.25em;
+        margin-bottom: 10px;
+    }
 }
 
 .menu {
-
+    font-family: 'Helvetica', sans-serif;
     font-size: 1em;
     font-weight: 400;
     background: white;
@@ -380,3 +419,245 @@ td.right-align {
       font-size: 20px; /* Smaller icon for smaller screens */
     }
   }
+
+/* Scroll container and sections */
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll; /* Changed from auto to scroll to force scrollbar */
+    /* scroll-snap-type: y mandatory; */
+    scroll-behavior: smooth;
+    position: relative; /* Ensure position context */
+    -webkit-overflow-scrolling: touch; /* Better scrolling on iOS */
+}
+
+.scroll-section {
+    height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .scroll-section {
+        height: 50vh;
+    }
+}
+
+#first-section {
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+#second-section {
+    position: relative;
+    width: 100%;
+}
+
+.new-section {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.yellow-section {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(229, 255, 111);
+}
+
+.immersive-section {
+    background-color: #0400ff;
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headline-text {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 6.875em;
+    color: white;
+    text-align: right;
+    line-height: 1.1;
+    margin-bottom: 3rem;
+    width: 90%;
+    max-width: 1400px;
+}
+
+.subheadline-text {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.25em;
+    color: white;
+    text-align: left;
+    width: 42%;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .headline-text {
+        font-size: 3.5em;
+        width: 95%;
+    }
+    
+    .subheadline-text {
+        width: 80%;
+        font-size: 1.1em;
+    }
+}
+
+/* Footer Styles */
+.site-footer {
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 3rem 0;
+    background-color: white;
+    color: #000;
+    width: 100%;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-nav a {
+    color: #000;
+    text-decoration: none;
+    margin: 0.5rem 0;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #0400ff;
+}
+
+.footer-logo span {
+    font-family: 'Helvetica', sans-serif;
+    letter-spacing: 0.25em;
+    font-size: 1.25em;
+    font-weight: 500;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer-social a {
+    color: #000;
+    text-decoration: none;
+    margin: 0.5rem 0;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #0400ff;
+}
+
+.footer-divider {
+    height: 1px;
+    background-color: rgb(0, 0, 0);
+    margin: 1rem 2rem;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+}
+
+.consult-section {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.email-section {
+    /* flex-grow: 1; */
+    margin: 0 2rem;
+    width: 200px;
+}
+
+.footer-email {
+    width: 400px;
+    padding: 0.8rem;
+    border: none;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.3); */
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1rem;
+    background-color: transparent;
+    outline: none;
+}
+
+.footer-email::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.whatsapp-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.7);
+    padding: 1rem 2rem;
+}
+
+@media (max-width: 768px) {
+    .footer-top, .footer-bottom {
+        flex-direction: row;
+        text-align: center;
+
+    }
+    .footer-bottom {
+        padding: 0em 2em;
+    }
+    
+    .footer-nav, .footer-social {
+        align-items: center;
+        margin: 1rem 0;
+    }
+    
+    .email-section {
+        width: 30%;
+        margin: 1rem 0;
+    }
+    
+    .footer-logo {
+        margin: 1.5rem 0;
+        margin-top: -14px;
+
+    }
+}
