@@ -1,242 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>One Blue Dot</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/x-icon" href="/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - One Blue Dot</title>
     <style>
-      .fade-section {
-        opacity: 0;
-        transition: opacity 0.6s ease-out;
-      }
-      .fade-in {
-        opacity: 1;
-      }
-    </style>
-  </head>
-  <body>
-    <header id="menu" class="hidden">
-      <div class="logo">
-        <span style="font-family: 'Helvetica', sans-serif;   letter-spacing: 0.25em; font-size: 1.25em; color: rgb(0, 0, 0)">ONE BLUE DOT</span>
-      </div>
-      <nav class="menu">
-        <a href="/about.html">ABOUT</a>
-        <a href="/work.html">WORK</a>
-        <a href="/contact.html">CONTACT</a>
-      </nav>
-    </header>
-
-    <!-- <div id="scroll-containerid" class="scroll-container"> -->
-      <section id="first-section" class="scroll-section" style="height: 100vh;">
-        <div id="container">
-          <div class="circle" id="shrinkable">
-            <div class="obd-logo-bg" style="opacity: 0;"></div>
-          </div>
-        </div>
-      </section>
-      
-      <section id="second-section" class="">
-        <div class="immersive-section">
-          <div class="headline-text">
-            Designing<br>
-            Immersive and<br>
-            Art-driven spaces
-          </div>
-          <div class="subheadline-text">
-            <strong>ONE BLUE DOT</strong> means Crafting bespoke, meaningful spaces as distinctive as the planet itself.<br><br>
-            Our aim is to blend art, sustainability, and modern luxury to create timeless designs<br>tailored to each client's lifestyle and micro needs.<br><br>
-            To create it, we have to ask the right questions, research, rethink, re-everything. This is the only way to ensure that our clients get that functional, powerful visual and physical dream they've been looking for.
-          </div>
-        </div>
-      </section>
-      
-      <section id="third-section" class="scroll-section" style="background-image: url('1.png'); background-size: cover; background-position: center; position: relative;">
-        <div class="section-text" style="position: absolute; bottom: 8%; left:3%;  text-align: center; color: white; padding: 20px;">
-          <h2 id="section-heading">Komorebi House | Hyderabad </h2>
-          <!-- <p style="font-family: 'Nunito Sans', sans-serif; font-size: 1.2em;">Where design meets purpose and beauty meets function</p> -->
-        </div>
-      </section>
-      <section id="fourth-section" class="scroll-section" style="background-image: url('2.jpg'); background-size: cover; background-position: center; position: relative;">
-        <div class="section-text" style="position: absolute; bottom: 8%; left:3%;  text-align: center; color: white; padding: 20px;">
-          <h2 id="section-heading">Humane | Eco Cabin| Mulshi </h2>
-          <!-- <p style="font-family: 'Nunito Sans', sans-serif; font-size: 1.2em;">Where design meets purpose and beauty meets function</p> -->
-        </div>
-      </section>
-      <section id="fifth-section" class="scroll-section" style="background-image: url('3.jpg'); background-size: cover; background-position: center; position: relative;">
-        <div class="section-text" style="position: absolute; bottom: 8%; left:3%;  text-align: center; color: white; padding: 20px;">
-          <h2 id="section-heading">Humane | Eco Cabin| Mulshi</h2>
-          <!-- <p style="font-family: 'Nunito Sans', sans-serif; font-size: 1.2em;">Where design meets purpose and beauty meets function</p> -->
-        </div>
-      </section>
-      <section id="sixth-section" class="scroll-section" style="background-image: url('4.png'); background-size: cover; background-position: center; position: relative;">
-        <div class="section-text" style="position: absolute; bottom: 8%; left:3%;  text-align: center; color: white; padding: 20px;">
-          <h2 id="section-heading">Paper House | Hyderbad</h2>
-          <!-- <p style="font-family: 'Nunito Sans', sans-serif; font-size: 1.2em;">Where design meets purpose and beauty meets function</p> -->
-        </div>
-      </section>
-    <!-- </div> -->
-
-    <footer class="site-footer">
-      <div class="footer-divider"></div>
-      <div class="footer-top">
-        <div class="footer-nav">
-          <a href="/portfolio.html">Portfolio</a>
-          <a href="/about.html">About</a>
-          <a href="/contact.html">Contact</a>
-          <a href="/careers.html">Careers</a>
-        </div>
-        <div class="footer-logo">
-          <span style="font-family: 'Helvetica', sans-serif;   letter-spacing: 0.25em; font-size: 1.25em; color: rgb(0, 0, 0)">ONE BLUE DOT</span>
-        </div>
-        <div class="footer-social">
-          <a href="https://instagram.com" target="_blank">Instagram</a>
-          <a href="https://facebook.com" target="_blank">Facebook</a>
-          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-          <a href="https://youtube.com" target="_blank">YouTube</a>
-        </div>
-      </div>
-      
-      <div class="footer-divider"></div>
-      
-      <div class="footer-bottom">
-        <div class="consult-section">
-          <span>Consult Us!</span>
-        </div>
-        <div class="email-section">
-          <input type="email" placeholder="Email address" class="footer-email">
-        </div>
-        <div class="whatsapp-section">
-          <a href="https://wa.me/yourphonenumber" target="_blank">
-            <img src="whatsapp-icon.svg" alt="WhatsApp" class="whatsapp-icon">
-          </a>
-        </div>
-      </div>
-      
-      <div class="footer-divider"></div>
-      
-      <div class="copyright">
-        ©2025 by One Blue Dot. All rights reserved.
-      </div>
-    </footer>
-
-  </body>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const container = document.getElementById("container");
-      const shrinkable = document.getElementById("shrinkable");
-      const textElement = document.getElementById("text");
-      const menu = document.getElementById("menu");
-      const obdLogo = document.getElementsByClassName("obd-logo-bg");
-      let circleClicked = false;
-      
-      // Register ScrollTrigger plugin
-      gsap.registerPlugin(ScrollTrigger);
-      
-      // Setup fade-in animations for sections
-      const sections = document.querySelectorAll(' #third-section, #fourth-section, #fifth-section, #sixth-section');
-      
-      sections.forEach((section) => {
-        // Add fade-section class to all sections for initial state
-        section.classList.add('fade-section');
-        
-        // Create the ScrollTrigger for each section
-        ScrollTrigger.create({
-          trigger: section,
-          start: "top 90%", // trigger animation when top of section reaches 80% down the viewport
-          onEnter: () => {
-            gsap.to(section, {
-              opacity: 1,
-              duration: 0.8,
-              ease: "power2.in",
-              delay: 0.1
-            });
-          },
-          once: false // animate every time it enters the viewport
-        });
-      });
-      
-      // Variables for scroll hide functionality
-      let lastScrollTop = 0;
-      
-      container.addEventListener("click", function () {
-        // Shrink the circle
-        const isMobile = window.innerWidth <= 768; // Check if device is mobile
-        const shrinkSize = isMobile ? '25em' : '30em'; // Use 25em for mobile, 30em for desktop
-        
-        gsap.to(shrinkable, {
-          duration: 0.5,
-          width: shrinkSize,
-          height: shrinkSize,
-          ease: "power2.in",
-          onComplete: function () {
-            // Once the circle has shrunk, handle the text and menu animations
-            
-            // Show the menu
-            circleClicked = true;
-            menu.classList.remove('hidden');
-            document.body.classList.add('scrollable');
-            gsap.to(obdLogo, {
-              opacity: 1,
-              duration: 1.5,
-              ease: "power2.in",
-              delay: 0.5,
-            });
-          },
-        });
-      });
-
-      // Header hide on scroll functionality
-      function handleScroll() {
-        const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-        console.log(scrollTop);
-        // Determine scroll direction
-        if (scrollTop > lastScrollTop && scrollTop > 50 ) {
-          // Scrolling down and not at the very top
-          menu.classList.add('hidden');
-          
-        } else {
-          // Scrolling up
-          if (circleClicked) {
-          console.log("Scrolling up");
-          menu.classList.remove('hidden');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-      }
-        
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-      }
-      
 
-      
-      // Add scroll event listener to the body instead of window
-      document.body.addEventListener('scroll', handleScroll);
-      
-      // Implement smooth scrolling between sections
-      // const sections = document.querySelectorAll('.scroll-section');
-      // let currentSection = 0;
-      
-      // window.addEventListener('wheel', function(e) {
-      //   e.preventDefault();
-        
-      //   // Determine scroll direction
-      //   const direction = e.deltaY > 0 ? 1 : -1;
-        
-      //   // Calculate next section
-      //   const nextSection = Math.min(Math.max(0, currentSection + direction), sections.length - 1);
-        
-      //   // Only scroll if there's a change in section
-      //   if (nextSection !== currentSection) {
-      //     currentSection = nextSection;
-      //     sections[currentSection].scrollIntoView({ behavior: 'smooth' });
-          
-      //     // Trigger the scroll handler manually
-      //     setTimeout(handleScroll, 100);
-      //   }
-      // }, { passive: false });
-    });
-  </script>
-</html>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: white;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #0400ff;
+            border-radius: 50%;
+            width: 600px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .logo {
+            width: 250px;
+            height: auto;
+            margin-bottom: 0px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .coming-soon {
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            font-family: arial;
+            text-align: left;
+        }
+
+        .phone {
+            font-size: 1rem;
+        }
+
+        .phone a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .phone a:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <img src="logo-name.png" alt="One Blue Dot Logo" class="logo">
+            <p class="coming-soon">Our website is currently under construction — just like the spaces we design.
+                <br>
+                <br>
+                But good things take time. We're crafting a digital experience that reflects the spirit, sensitivity, and boldness of our architectural practice.
+            </p>
+            <p class="phone">Reach us at <a href="mailto:studio@onebluedot.in">studio@onebluedot.in</a></p>
+            <p class="phone">
+                <a href="https://www.instagram.com/one_blue_dot_studio" target="_blank" style="display: inline-flex; align-items: center; gap: 5px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    @one_blue_dot_studio
+                </a>
+            </p>
+        </div>
+    </div>
+</body>
+</html> 
