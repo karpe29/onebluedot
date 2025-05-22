@@ -1,5 +1,97 @@
----
-layout: home
-title: Home
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - One Blue Dot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: white;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #0400ff;
+            border-radius: 50%;
+            width: 600px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .logo {
+            width: 250px;
+            height: auto;
+            margin-bottom: 0px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .coming-soon {
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            font-family: arial;
+            text-align: left;
+        }
+
+        .phone {
+            font-size: 1rem;
+        }
+
+        .phone a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .phone a:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <img src="logo-name.png" alt="One Blue Dot Logo" class="logo">
+            <p class="coming-soon">Our website is currently under construction — just like the spaces we design.
+                <br>
+                <br>
+                But good things take time. We're crafting a digital experience that reflects the spirit, sensitivity, and boldness of our architectural practice.
+            </p>
+            <p class="phone">Reach us at <a href="mailto:studio@onebluedot.in">studio@onebluedot.in</a></p>
+            <p class="phone">
+                <a href="https://www.instagram.com/one_blue_dot_studio" target="_blank" style="display: inline-flex; align-items: center; gap: 5px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    @one_blue_dot_studio
+                </a>
+            </p>
+        </div>
+    </div>
+</body>
+</html> 
